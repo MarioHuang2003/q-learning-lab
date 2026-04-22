@@ -4,7 +4,7 @@
 > 自己设计迷宫，选择算法，观察勇者如何在你设定的奖励世界里学会最优策略——
 > 实时看到 **Q 值热力图、策略箭头、每向 Q 值四象限、状态价值、TD 误差、学习曲线**。
 
-🌐 **在线体验**：<https://TODO-REPLACE-WITH-YOUR-VERCEL-URL.vercel.app>  _(部署后请替换)_
+🌐 **在线体验**：<https://mariohuang2003.github.io/q-learning-lab/>
 
 ![tech](https://img.shields.io/badge/HTML-5-orange) ![tech](https://img.shields.io/badge/ES_Modules-✓-f7df1e) ![tech](https://img.shields.io/badge/Canvas_2D-✓-2d8cff) ![deps](https://img.shields.io/badge/dependencies-0-brightgreen) ![build](https://img.shields.io/badge/build-none-lightgrey)
 
