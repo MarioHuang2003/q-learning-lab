@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+._*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Node（虽然当前无 node_modules，预留）
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+
+# Cursor / AI 工具产物
+.cursor/
+.aider*
+
+# 系统
+Thumbs.db

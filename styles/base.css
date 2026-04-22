@@ -1,0 +1,89 @@
+/* 基础重置 + 排版 */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+html {
+  font-family: var(--font-sans);
+  color: var(--fg-0);
+  background: var(--bg-0);
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(34,197,94,0.08), transparent 60%),
+    radial-gradient(1000px 600px at 110% 10%, rgba(14,165,233,0.08), transparent 55%),
+    var(--bg-0);
+  min-height: 100vh;
+  transition: background var(--t-med);
+}
+
+[data-theme='dark'] body {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(34,197,94,0.10), transparent 60%),
+    radial-gradient(1000px 600px at 110% 10%, rgba(14,165,233,0.10), transparent 55%),
+    var(--bg-0);
+}
+
+h1, h2, h3, h4 { margin: 0; font-weight: 800; letter-spacing: -0.01em; }
+p { margin: 0; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-600); }
+
+.muted { color: var(--fg-muted); font-size: 13px; line-height: 1.5; }
+.hint  { color: var(--fg-subtle); font-size: 12px; line-height: 1.4; margin-top: 6px; }
+
+.hidden { display: none !important; }
+
+code, .formula {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+}
+
+.formula {
+  display: block;
+  padding: 8px 10px;
+  background: var(--bg-muted);
+  color: var(--fg-1);
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border-soft);
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.6;
+}
+
+kbd {
+  display: inline-block;
+  padding: 2px 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--kbd-fg);
+  background: var(--kbd-bg);
+  border: 1px solid var(--kbd-border);
+  border-radius: 5px;
+  box-shadow: inset 0 -1px 0 var(--kbd-border);
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background-color: var(--fg-subtle); background-clip: padding-box; }
+
+/* 选中态 */
+::selection { background: rgba(34,197,94,0.30); }

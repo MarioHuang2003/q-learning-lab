@@ -1,0 +1,11 @@
+{
+  "name": "reward-architect",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI 奖励建筑师 · 强化学习实验室（Q-Learning / SARSA / Expected SARSA / Double Q / Dyna-Q）",
+  "scripts": {
+    "start": "python3 -m http.server 8765",
+    "dev":   "python3 -m http.server 8765"
+  }
+}
