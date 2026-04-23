@@ -4,7 +4,7 @@
 //   · 顶栏「?」按钮随时打开
 //   · 左侧章节导航 + 右侧滚动内容
 //   · 键盘：Esc 关闭 · ↑/↓ 或 j/k 切换章节
-//   · 完成后按"进入实验室"关闭
+//   · 关闭（任意方式）后写入 localStorage，刷新不再自动弹出；? 可随时重开
 
 import { CHAPTERS, GUIDE_VERSION } from './guide-content.js';
 
@@ -27,7 +27,7 @@ export class Guide {
     this._renderChapter(this.activeId);
 
     this.closeBtn?.addEventListener('click', () => this.close());
-    this.doneBtn?.addEventListener('click', () => this.close(true));
+    this.doneBtn?.addEventListener('click', () => this.close());
 
     // 点击遮罩外关闭
     this.overlay?.addEventListener('mousedown', (e) => {
@@ -97,7 +97,7 @@ export class Guide {
     this.main.querySelectorAll('[data-go]').forEach(btn => {
       btn.addEventListener('click', () => this._renderChapter(btn.dataset.go));
     });
-    this.main.querySelector('#guideDoneInline')?.addEventListener('click', () => this.close(true));
+    this.main.querySelector('#guideDoneInline')?.addEventListener('click', () => this.close());
 
     // 高亮侧边栏
     this.sidebar.querySelectorAll('.guide-nav-item').forEach(el => {
@@ -123,11 +123,13 @@ export class Guide {
     window.addEventListener('keydown', this._onKey);
   }
 
-  close(markDone = false) {
+  close() {
     this.overlay.classList.remove('is-open');
     document.body.classList.remove('guide-locked');
     window.removeEventListener('keydown', this._onKey);
-    if (markDone) this._markSeen();
+    // 任意方式关闭（✕ / Esc / 点遮罩 / 进入实验室）都记「已看过当前版本」，
+    // 避免用户以为关掉了却每次刷新又弹；需要重看仍可按 ? 打开。
+    this._markSeen();
   }
 
   isOpen() { return this.overlay.classList.contains('is-open'); }
