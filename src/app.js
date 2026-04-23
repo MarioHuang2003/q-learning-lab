@@ -620,10 +620,10 @@ export class App {
     // UI 同步
     this.$.gridSize.value = String(p.gridSize);
     this.$.gridSizeVal.textContent = String(p.gridSize);
-    if (p.slipProb != null) {
-      this.$.slipProb.value = String(p.slipProb);
-      this.$.slipProbVal.textContent = p.slipProb.toFixed(2);
-    }
+    // slipProb 无条件同步（预设没定义时按 0 处理），避免继承上个预设的值
+    const slip = p.slipProb ?? 0;
+    this.$.slipProb.value = String(slip);
+    this.$.slipProbVal.textContent = slip.toFixed(2);
     this.$.presetSelect.value = id;
 
     this.log.push(`🗺 加载预设：${p.label}。${p.note}`, 'event');

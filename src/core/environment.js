@@ -75,7 +75,9 @@ export class MazeEnvironment {
     const sc = preset.start.col;
     this.startPos = { row: sr, col: sc };
     this.agentPos = { row: sr, col: sc };
-    if (preset.slipProb != null) this.setSlipProb(preset.slipProb);
+    // 所有预设都显式应用 slipProb（缺省视为 0），避免切到确定性场景时
+    // 继承上一个预设的滑动概率。
+    this.setSlipProb(preset.slipProb ?? 0);
   }
 
   reset() {

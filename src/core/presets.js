@@ -16,10 +16,11 @@ function emptyPreset() {
   return {
     id: 'empty',
     label: '空旷世界',
-    note: '最简单的场景：从左上角走到右上角的宝箱',
+    note: '最简单的场景：从左下走到右上的宝箱（确定性环境）',
     gridSize: n,
     grid: g,
     start: { row: n - 1, col: 0 },
+    slipProb: 0,
   };
 }
 
@@ -33,10 +34,11 @@ function cliffPreset() {
   return {
     id: 'cliff',
     label: '悬崖漫步',
-    note: 'SARSA 会学会绕远路，Q-Learning 敢贴着悬崖走（经典案例）',
+    note: 'SARSA 会学会绕远路，Q-Learning 敢贴着悬崖走（经典确定性环境）',
     gridSize: n,
     grid: g,
     start: { row: n - 1, col: 0 },
+    slipProb: 0,
   };
 }
 
@@ -57,10 +59,11 @@ function fourRoomsPreset() {
   return {
     id: 'four-rooms',
     label: '四房间',
-    note: '看 Q 值如何通过狭窄门洞传播到隔壁房间',
+    note: '看 Q 值如何通过狭窄门洞传播到隔壁房间（确定性环境）',
     gridSize: n,
     grid: g,
     start: { row: n - 1, col: 0 },
+    slipProb: 0,
   };
 }
 
