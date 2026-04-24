@@ -6,6 +6,8 @@
 
 🌐 **在线体验**：<https://mariohuang2003.github.io/q-learning-lab/>
 
+📦 **源码仓库**：<https://github.com/MarioHuang2003/q-learning-lab>
+
 ![tech](https://img.shields.io/badge/HTML-5-orange) ![tech](https://img.shields.io/badge/ES_Modules-✓-f7df1e) ![tech](https://img.shields.io/badge/Canvas_2D-✓-2d8cff) ![deps](https://img.shields.io/badge/dependencies-0-brightgreen) ![build](https://img.shields.io/badge/build-none-lightgrey)
 
 ---

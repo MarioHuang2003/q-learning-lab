@@ -2,6 +2,13 @@
 
 button { font-family: inherit; }
 
+a.icon-btn {
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+}
+a.icon-btn:visited { color: inherit; }
+
 .icon-btn {
   display: inline-flex;
   align-items: center;
